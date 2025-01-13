@@ -19,5 +19,9 @@ RSpec.describe StringCalculator do
     it "return the sum of unknown number of input" do
       expect(calculator.add("1,2,3,3,5")).to eq(14)
     end
+
+    it "return the sum of unknown number of input" do
+      expect(calculator.add("1\n2\n3\n3\n5")).to eq(14)
+    end
   end
 end
