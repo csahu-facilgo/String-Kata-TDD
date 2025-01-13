@@ -63,5 +63,13 @@ RSpec.describe StringCalculator do
     it "return the sum from support different delimiters" do
       expect(calculator.add("//;\n1;2")).to eq(3)
     end
+
+    it "return negtaives not allowed when pass a negative number in the string" do
+      expect { (calculator.add("1\n-2,3")) }.to raise_error("Negative numbers not allowed: -2")
+    end
+
+    it "return negtaives not allowed when pass multiple negative number in the string" do
+      expect { (calculator.add("1\n-2,3\n-4,5")) }.to raise_error("Negative numbers not allowed: -2, -4")
+    end
   end
 end
