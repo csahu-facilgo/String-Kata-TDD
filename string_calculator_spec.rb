@@ -31,5 +31,33 @@ RSpec.describe StringCalculator do
     it "return the sum of multiple new line & multiple comma seperated string" do
       expect(calculator.add("1\n1,2,3\n5\n6\n7")).to eq(25)
     end
+
+    it "return the sum of begin with comma & multi comma seperated and multiple new line string" do
+      expect(calculator.add(",1\n2,3,4\n5\n6")).to eq(21)
+    end
+
+    it "return the sum of multi comma seperated and multiple new line with end comma seperated string" do
+      expect(calculator.add("1\n2,3,4\n5\n6,")).to eq(21)
+    end
+
+    it "return the sum of multi comma seperated and multiple new line with end new line seperated string" do
+      expect(calculator.add("1,2,3,4\n5,6\n")).to eq(21)
+    end
+
+    it "return the sum of multi comma seperated and multiple new line with begin & end new line seperated string" do
+      expect(calculator.add("\n1,2,3,4\n5,6\n")).to eq(21)
+    end
+
+    it "return the sum of multi comma seperated and multiple new line with begin & end comma seperated string" do
+      expect(calculator.add(",1,2,3,4\n5\n6,")).to eq(21)
+    end
+
+    it "return the sum of multi comma seperated and multiple new line with begin with comma & end with new line seperated string" do
+      expect(calculator.add(",1,2,3,4\n5,6\n")).to eq(21)
+    end
+
+    it "return the sum of multi comma seperated and multiple new line with begin with new line & end with comma seperated string" do
+      expect(calculator.add("\n1,2,3,4\n5,6,")).to eq(21)
+    end
   end
 end
