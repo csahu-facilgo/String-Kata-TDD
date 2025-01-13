@@ -59,5 +59,9 @@ RSpec.describe StringCalculator do
     it "return the sum of multi comma seperated and multiple new line with begin with new line & end with comma seperated string" do
       expect(calculator.add("\n1,2,3,4\n5,6,")).to eq(21)
     end
+
+    it "return the sum from support different delimiters" do
+      expect(calculator.add("//;\n1;2")).to eq(3)
+    end
   end
 end
